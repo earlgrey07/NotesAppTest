@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		835E3DD229ACBE030076FAD2 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E3DD129ACBE030076FAD2 /* CreateNoteViewController.swift */; };
 		838742D729AB60C10096F033 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838742D629AB60C10096F033 /* AppDelegate.swift */; };
 		838742D929AB60C10096F033 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838742D829AB60C10096F033 /* SceneDelegate.swift */; };
 		838742DB29AB60C10096F033 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838742DA29AB60C10096F033 /* ViewController.swift */; };
@@ -19,6 +20,7 @@
 
 /* Begin PBXFileReference section */
 		124424E7C72D8957862D106B /* Pods-TestCFT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestCFT.debug.xcconfig"; path = "Target Support Files/Pods-TestCFT/Pods-TestCFT.debug.xcconfig"; sourceTree = "<group>"; };
+		835E3DD129ACBE030076FAD2 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
 		838742D329AB60C10096F033 /* TestCFT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCFT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		838742D629AB60C10096F033 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		838742D829AB60C10096F033 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -50,7 +52,6 @@
 				124424E7C72D8957862D106B /* Pods-TestCFT.debug.xcconfig */,
 				E8AEE782B36DA8305B7C3889 /* Pods-TestCFT.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -78,6 +79,7 @@
 				838742D629AB60C10096F033 /* AppDelegate.swift */,
 				838742D829AB60C10096F033 /* SceneDelegate.swift */,
 				838742DA29AB60C10096F033 /* ViewController.swift */,
+				835E3DD129ACBE030076FAD2 /* CreateNoteViewController.swift */,
 				838742DC29AB60C10096F033 /* Main.storyboard */,
 				838742E229AB60C40096F033 /* Assets.xcassets */,
 				838742E429AB60C40096F033 /* LaunchScreen.storyboard */,
@@ -213,6 +215,7 @@
 				838742DB29AB60C10096F033 /* ViewController.swift in Sources */,
 				838742E129AB60C10096F033 /* TestCFT.xcdatamodeld in Sources */,
 				838742D729AB60C10096F033 /* AppDelegate.swift in Sources */,
+				835E3DD229ACBE030076FAD2 /* CreateNoteViewController.swift in Sources */,
 				838742D929AB60C10096F033 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

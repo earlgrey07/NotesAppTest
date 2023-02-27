@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    let createNoteVC = CreateNoteViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,9 +37,14 @@ extension ViewController {
         let newNoteButton = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(newNoteButtonPressed))
         navigationItem.rightBarButtonItem = newNoteButton
         newNoteButton.tintColor = .systemYellow
+        let backButton = UIBarButtonItem(title: "Notes", style: .plain, target: self, action: #selector(backPressed))
+        backButton.tintColor = .systemYellow
+        navigationItem.backBarButtonItem = backButton
     }
     
     @objc func newNoteButtonPressed() {
-        
+        self.navigationController?.pushViewController(createNoteVC, animated: true)
     }
+    
+    @objc func backPressed() {}
 }

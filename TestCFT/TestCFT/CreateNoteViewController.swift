@@ -11,7 +11,9 @@ import SnapKit
 
 class CreateNoteViewController: UIViewController {
     
-    private lazy var textView: UITextView = {
+    var note: Note?
+    
+    lazy var textView: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.font = .systemFont(ofSize: 22)
@@ -21,6 +23,7 @@ class CreateNoteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        textView.delegate = self
         view.backgroundColor = .systemBackground
         setupViews()
         createSaveButton()
@@ -43,4 +46,7 @@ class CreateNoteViewController: UIViewController {
     }
     
     @objc func savePressed() {}
+}
+
+extension CreateNoteViewController: UITextViewDelegate {
 }

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		835E3DD229ACBE030076FAD2 /* CreateNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E3DD129ACBE030076FAD2 /* CreateNoteViewController.swift */; };
+		835E3DD629ACD59E0076FAD2 /* Note+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E3DD429ACD59E0076FAD2 /* Note+CoreDataClass.swift */; };
+		835E3DD729ACD59E0076FAD2 /* Note+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 835E3DD529ACD59E0076FAD2 /* Note+CoreDataProperties.swift */; };
 		838742D729AB60C10096F033 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838742D629AB60C10096F033 /* AppDelegate.swift */; };
 		838742D929AB60C10096F033 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838742D829AB60C10096F033 /* SceneDelegate.swift */; };
 		838742DB29AB60C10096F033 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 838742DA29AB60C10096F033 /* ViewController.swift */; };
@@ -21,6 +23,8 @@
 /* Begin PBXFileReference section */
 		124424E7C72D8957862D106B /* Pods-TestCFT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestCFT.debug.xcconfig"; path = "Target Support Files/Pods-TestCFT/Pods-TestCFT.debug.xcconfig"; sourceTree = "<group>"; };
 		835E3DD129ACBE030076FAD2 /* CreateNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNoteViewController.swift; sourceTree = "<group>"; };
+		835E3DD429ACD59E0076FAD2 /* Note+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataClass.swift"; sourceTree = "<group>"; };
+		835E3DD529ACD59E0076FAD2 /* Note+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Note+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		838742D329AB60C10096F033 /* TestCFT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestCFT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		838742D629AB60C10096F033 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		838742D829AB60C10096F033 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +59,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		835E3DD329ACD5830076FAD2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				835E3DD429ACD59E0076FAD2 /* Note+CoreDataClass.swift */,
+				835E3DD529ACD59E0076FAD2 /* Note+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		838742CA29AB60C10096F033 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +89,7 @@
 		838742D529AB60C10096F033 /* TestCFT */ = {
 			isa = PBXGroup;
 			children = (
+				835E3DD329ACD5830076FAD2 /* Model */,
 				838742D629AB60C10096F033 /* AppDelegate.swift */,
 				838742D829AB60C10096F033 /* SceneDelegate.swift */,
 				838742DA29AB60C10096F033 /* ViewController.swift */,
@@ -213,8 +227,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				838742DB29AB60C10096F033 /* ViewController.swift in Sources */,
+				835E3DD729ACD59E0076FAD2 /* Note+CoreDataProperties.swift in Sources */,
 				838742E129AB60C10096F033 /* TestCFT.xcdatamodeld in Sources */,
 				838742D729AB60C10096F033 /* AppDelegate.swift in Sources */,
+				835E3DD629ACD59E0076FAD2 /* Note+CoreDataClass.swift in Sources */,
 				835E3DD229ACBE030076FAD2 /* CreateNoteViewController.swift in Sources */,
 				838742D929AB60C10096F033 /* SceneDelegate.swift in Sources */,
 			);

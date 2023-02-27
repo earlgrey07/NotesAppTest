@@ -45,7 +45,12 @@ class CreateNoteViewController: UIViewController {
         navigationItem.rightBarButtonItem = saveButton
     }
     
-    @objc func savePressed() {}
+    @objc func savePressed() {
+        note?.text = textView.text
+        try? note?.managedObjectContext?.save()
+        textView.text = ""
+        navigationController?.popViewController(animated: true)
+    }
 }
 
 extension CreateNoteViewController: UITextViewDelegate {

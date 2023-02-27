@@ -26,7 +26,6 @@ class ViewController: UIViewController {
     private lazy var tableView: UITableView = {
         let tableView = UITableView(frame: CGRect.zero, style: .insetGrouped)
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.allowsSelection = false
         return tableView
     }()
     
@@ -132,6 +131,7 @@ extension ViewController {
     }
     
     @objc func newNoteButtonPressed() {
+        createNoteVC.note = Note.init(entity: NSEntityDescription.entity(forEntityName: "Note", in: persistentContainer.viewContext)!, insertInto: persistentContainer.viewContext)
         self.navigationController?.pushViewController(createNoteVC, animated: true)
     }
     
@@ -148,5 +148,35 @@ extension ViewController: NSFetchedResultsControllerDelegate {
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.endUpdates()
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let  indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .automatic)
+            }
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+        case .move:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            if let newIndexPath = newIndexPath {
+                tableView.insertRows(at: [newIndexPath], with: .automatic)
+            }
+        case .update:
+            if let indexPath = indexPath {
+                let note = fetchedResultController.object(at: indexPath)
+                let cell = tableView.cellForRow(at: indexPath)
+                if let text = note.text {
+                    cell?.textLabel?.text = text
+                }
+            }
+        @unknown default:
+            break
+        }
     }
 }

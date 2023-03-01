@@ -10,6 +10,8 @@ import UIKit
 import SnapKit
 
 class CreateNoteViewController: UIViewController {
+  
+//MARK: - Параметры
     
     var note: Note?
     
@@ -17,17 +19,25 @@ class CreateNoteViewController: UIViewController {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.font = .systemFont(ofSize: 22)
+        textView.clipsToBounds = true
         return textView
     }()
+
+//MARK: - viewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textView.delegate = self
         view.backgroundColor = .systemBackground
         setupViews()
         createSaveButton()
+        
+        if let note = note {
+            textView.text = note.text
+        }
     }
+    
+//MARK: - Методы
     
     private func setupViews() {
         view.addSubview(textView)
@@ -42,7 +52,10 @@ class CreateNoteViewController: UIViewController {
     private func createSaveButton() {
         let saveButton = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(savePressed))
         saveButton.tintColor = .systemYellow
-        navigationItem.rightBarButtonItem = saveButton
+        let fontButton = UIBarButtonItem(title: "Font", style: .plain, target: self, action: #selector(fontButtonPressed))
+        fontButton.tintColor = .systemYellow
+        navigationItem.rightBarButtonItems = [saveButton, fontButton]
+        
     }
     
     @objc func savePressed() {
@@ -51,7 +64,29 @@ class CreateNoteViewController: UIViewController {
         textView.text = ""
         navigationController?.popViewController(animated: true)
     }
+    
+    @objc func fontButtonPressed() {
+        let config = UIFontPickerViewController.Configuration()
+        config.includeFaces = false
+        let fontPicker = UIFontPickerViewController(configuration: config)
+        fontPicker.delegate = self
+        present(fontPicker, animated: true)
+    }
 }
 
-extension CreateNoteViewController: UITextViewDelegate {
+//MARK: - extension UIFontPickerViewControllerDelegate
+
+extension CreateNoteViewController: UIFontPickerViewControllerDelegate {
+    
+    func fontPickerViewControllerDidCancel(_ viewController: UIFontPickerViewController) {
+        viewController.dismiss(animated: true, completion: nil)
+    }
+    
+    func fontPickerViewControllerDidPickFont(_ viewController: UIFontPickerViewController) {
+        let descriptor = viewController.selectedFontDescriptor
+        if let descriptor = descriptor {
+            textView.font = UIFont(descriptor: descriptor, size: 22)
+        }
+        viewController.dismiss(animated: true, completion: nil)
+    }
 }

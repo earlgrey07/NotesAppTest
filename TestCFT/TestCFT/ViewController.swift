@@ -10,7 +10,9 @@ import SnapKit
 import CoreData
 
 class ViewController: UIViewController {
-
+ 
+//MARK: - Параметры
+    
     private let persistentContainer = NSPersistentContainer(name: "TestCFT")
     let createNoteVC = CreateNoteViewController()
     
@@ -77,6 +79,10 @@ extension ViewController: UITableViewDataSource {
             return sections[section].numberOfObjects
         }
         return 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        60
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
